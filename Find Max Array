@@ -1,0 +1,32 @@
+/* This program finds the largest number in an array of up to 100 numbers. */
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, total;
+    float arr[100];
+
+    cout << "Enter total number of elements(1 to 100): ";
+    cin >> total;
+    cout << endl;
+
+    // Store number entered by the user
+    for(i = 0; i < total; ++i)
+    {
+       cout << "Enter Number " << i + 1 << " : ";
+       cin >> arr[i];
+    }
+
+    // Loop to store largest number to arr[0]
+    for(i = 1;i < total; ++i)
+    {
+       // Change < to > if you want to find the smallest element
+       if(arr[0] < arr[i])
+           arr[0] = arr[i];
+    }
+    cout << "Largest element = " << arr[0];
+
+    return 0;
+}
